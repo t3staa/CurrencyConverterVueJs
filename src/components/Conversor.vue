@@ -22,19 +22,27 @@ export default {
         return{
             moedaA_value: "",
             moedaB_value: "",
-            resultUSD_BRL: "Resultado: " + 0,
-            resultBRL_USD: "Resultado: " + 0
+            resultUSD_BRL: "Resultado: ",
+            resultBRL_USD: "Resultado: "
         }
     },
 
     methods:{
         converterUSD_BRL(){
-            this.resultUSD_BRL = "Resultado: " + (this.moedaA_value * 5.6161006159).toFixed(2) + " Reais";
-            return this.resultUSD_BRL;  
+            fetch('https://economia.awesomeapi.com.br/last/USD-BRL')
+                .then(res=>{return res.json()})
+                .then(json=>{
+                    let cotacao = json["USDBRL"].bid
+                    this.resultUSD_BRL = (cotacao * parseFloat(this.moedaA_value)).toFixed(2) + " Reais";
+                }) 
         },
         converterBRL_USD(){
-            this.resultBRL_USD = "Resultado: " + (this.moedaB_value * 0.178059488).toFixed(2) + " Dólares";
-            return this.resultBRL_USD;
+            fetch('https://economia.awesomeapi.com.br/last/BRL-USD')
+                .then(res=>{return res.json()})
+                .then(json=>{
+                    let cotacao = json["BRLUSD"].bid
+                    this.resultBRL_USD = (cotacao * parseFloat(this.moedaB_value)).toFixed(2) + " Dólares";
+                }) 
         }
     }
 };
