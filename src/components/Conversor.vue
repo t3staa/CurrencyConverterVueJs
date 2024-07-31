@@ -1,15 +1,15 @@
 <template>
     <div class="conversor">
         <h2>{{moedaA}} Para {{moedaB}}</h2>
-        <input type="text" v-model="moedaA_value" placeholder="Valor em Dólar:">
-        <input type="button" value="Converter" v-on:click="converterUSD_BRL">
+        <input class="input" type="text" v-model="moedaA_value" placeholder="Valor em Dólar:">
+        <input class="btn" type="button" value="Converter" v-on:click="converterUSD_BRL">
         <h2>{{resultUSD_BRL}}</h2>
     </div>
 
     <div class="conversor">
         <h2>{{moedaB}} Para {{moedaA}}</h2>
-        <input type="text" v-model="moedaB_value" placeholder="Valor em Real:">
-        <input type="button" value="Converter" v-on:click="converterBRL_USD">
+        <input class="input" type="text" v-model="moedaB_value" placeholder="Valor em Real:">
+        <input class="btn" type="button" value="Converter" v-on:click="converterBRL_USD">
         <h2>{{resultBRL_USD}}</h2>
     </div>
 </template>
@@ -22,8 +22,8 @@ export default {
         return{
             moedaA_value: "",
             moedaB_value: "",
-            resultUSD_BRL: 0,
-            resultBRL_USD: 0
+            resultUSD_BRL: "",
+            resultBRL_USD: ""
         }
     },
 
@@ -42,7 +42,6 @@ export default {
 </script>
 
 <style>
-
 .conversor{
     margin: 20px;
     padding: 50px;
@@ -64,5 +63,55 @@ export default {
     box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
     border-radius: .5rem;
     border: .1rem solid rgba(0,0,0,.1);
+}
+
+.input{
+    margin: 5px;
+    padding: 5px;
+    border-radius: .2rem;
+}
+
+.btn{
+    margin: 5px;
+    padding: 5px;
+    border-radius: .2rem;
+}
+
+.btn:hover{
+    background-color: rgb(176, 176, 176);
+}
+
+@media(max-width: 449px){
+    .conversor{
+        margin: 5px;
+        padding: 20px;
+        padding-left: 25px;
+        padding-right: 25px;
+        max-width: auto; 
+    }
+
+    .titulo{
+        padding: 5px;
+        margin-right: 6px;
+        margin-left: 6px;
+        max-width: auto;
+    }
+}
+
+@media (min-width: 450px) and (max-width: 830px){
+    .conversor{
+        margin: 10px;
+        padding: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        max-width: auto; 
+    }
+
+    .titulo{
+        padding: 5px;
+        margin-right: 50px;
+        margin-left: 50px;
+        max-width: auto;
+    }
 }
 </style>
