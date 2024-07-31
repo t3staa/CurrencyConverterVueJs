@@ -30,12 +30,11 @@ export default {
     methods:{
         converterUSD_BRL(){
             this.resultUSD_BRL = (this.moedaA_value * 5.6161006159).toFixed(2) + " Reais";
-            return this.resultUSD_BRL;
+            return this.resultUSD_BRL;  
         },
         converterBRL_USD(){
             this.resultBRL_USD = (this.moedaB_value * 0.178059488).toFixed(2) + " Dolares";
             return this.resultBRL_USD;
-            
         }
     }
 };

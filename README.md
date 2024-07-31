@@ -1,4 +1,6 @@
-# conversor
+# Conversor de moedas
+
+A ideia desse projeto é fazer a conversão de moedas entre Real e Dólar, e o principal objetivo é conhecer e estudar o Framework VueJs.
 
 ## Project setup
 ```
