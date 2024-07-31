@@ -28,7 +28,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin: 40px;
-  margin-top: 80px;
   padding: 2px;
 }
 footer {

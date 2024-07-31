@@ -44,8 +44,8 @@ export default {
 .conversor{
     margin: 20px;
     padding: 50px;
-    padding-left: 215px;
-    padding-right: 215px;
+    padding-left: 165px;
+    padding-right: 165px;
     max-width: auto; 
     box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
     border-radius: .5rem;
