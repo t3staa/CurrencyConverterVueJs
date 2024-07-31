@@ -22,18 +22,18 @@ export default {
         return{
             moedaA_value: "",
             moedaB_value: "",
-            resultUSD_BRL: "",
-            resultBRL_USD: ""
+            resultUSD_BRL: "Resultado: " + 0,
+            resultBRL_USD: "Resultado: " + 0
         }
     },
 
     methods:{
         converterUSD_BRL(){
-            this.resultUSD_BRL = (this.moedaA_value * 5.6161006159).toFixed(2) + " Reais";
+            this.resultUSD_BRL = "Resultado: " + (this.moedaA_value * 5.6161006159).toFixed(2) + " Reais";
             return this.resultUSD_BRL;  
         },
         converterBRL_USD(){
-            this.resultBRL_USD = (this.moedaB_value * 0.178059488).toFixed(2) + " Dolares";
+            this.resultBRL_USD = "Resultado: " + (this.moedaB_value * 0.178059488).toFixed(2) + " Dólares";
             return this.resultBRL_USD;
         }
     }
